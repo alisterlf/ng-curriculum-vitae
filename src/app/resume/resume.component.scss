@@ -1,0 +1,141 @@
+header {
+  section {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+  }
+  h1 {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1em;
+    color: inherit;
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h2,
+  h3 {
+    margin: 0;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 2em;
+  }
+}
+
+main {
+  dt {
+    .mat-icon {
+      font-size: 32px;
+      width: 32px;
+      height: 32px;
+    }
+    em {
+      font-weight: 400;
+      float: right;
+      font-size: 14px;
+    }
+  }
+}
+
+footer {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid #000;
+  dd {
+    dt,
+    dd,
+    li {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+    dt {
+      margin-left: 10px;
+      &::before {
+        content: "- ";
+      }
+    }
+    ul {
+      &::before {
+        content: "(";
+      }
+      &::after {
+        content: ")";
+      }
+      li:first-child::before {
+        content: "";
+        margin: 0;
+      }
+      li::before {
+        content: "/";
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+.material-icons {
+  vertical-align: middle;
+  +span {
+    vertical-align: middle;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+dl {
+  margin: 0;
+  dt {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6em;
+  }
+  dd {
+    margin: 0;
+    padding: 0;
+    dt {
+      font-size: 16px;
+    }
+    dd {
+      padding-bottom: 10px;
+      li {
+        padding-left: 10px;
+        &.header {
+          padding-left: 0;
+          hr {
+            margin-top: 0.25rem;
+            border: none;
+            border-top: 1px solid #999;
+          }
+        }
+      }
+    }
+  }
+}
+
+dt,
+strong {
+  font-weight: 500;
+}
+
+.category-list>dt {
+  border-bottom: 2px solid #444;
+  margin: 10px 0;
+}
+
+ul.styled {
+  list-style: initial;
+  padding-left: 20px;
+  li {
+    padding-left: 0;
+  }
+}
