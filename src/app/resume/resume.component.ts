@@ -87,6 +87,6 @@ export class ResumeComponent implements OnInit {
         volunteer: 'Volunteer',
         interests: 'Interests'
       }
-    ][1];
+    ][0];
   }
 }
