@@ -1,1 +1,1 @@
-export * from '@app/core/moment-integration/moment-integration.module';
+export * from './moment-integration.module';

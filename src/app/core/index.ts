@@ -1,1 +1,1 @@
-export * from '@app/core/core.module';
+export * from './core.module';
