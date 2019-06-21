@@ -1,0 +1,276 @@
+<ng-container *ngIf="resume$ | async; else loading">
+  <header>
+    <h1>{{ resume.basics.name }}</h1>
+    <h2 *ngIf="resume.basics.label">{{ resume.basics.label }}</h2>
+    <ul>
+      <li *ngIf="resume.basics.phone">
+        <mat-icon>phone</mat-icon> {{ resume.basics.phone }}
+      </li>
+      <li *ngIf="resume.basics.email">
+        <mat-icon>email</mat-icon> {{ resume.basics.email }}
+      </li>
+      <li *ngIf="resume.basics.location">
+        <mat-icon>location_on</mat-icon>
+        {{ resume.basics.location.city }} - {{ resume.basics.location.region }}
+      </li>
+      <li *ngIf="resume.basics.birthdate">
+        <mat-icon>today</mat-icon>
+        {{ resume.basics.birthdate | date: i18n.dateFormat }}
+      </li>
+      <li *ngIf="resume.basics.url">
+        <mat-icon>link</mat-icon>
+        <a [href]="resume.basics.url" target="_blank">
+          {{ resume.basics.url }}
+        </a>
+      </li>
+      <li *ngFor="let profile of resume.basics.profiles">
+        <mat-icon [title]="profile.network">link</mat-icon>
+        <span class="url">
+          {{ profile.network }}:
+          <a [href]="profile.url" target="_blank" *ngIf="profile.url">
+            {{ profile.url }}
+          </a>
+          <span *ngIf="!profile.url">profile.username</span>
+        </span>
+      </li>
+    </ul>
+    <div *ngIf="resume.basics.summary">
+      <h3>{{ i18n.summary }}</h3>
+      <p>{{ resume.basics.summary }}</p>
+    </div>
+  </header>
+  <main>
+    <section *ngIf="resume.education">
+      <h4>
+        <mat-icon>school</mat-icon>
+        {{ i18n.education.header }}
+      </h4>
+      <ul>
+        <li *ngFor="let education of resume.education">
+          <ul>
+            <li *ngIf="education.institution">
+              <strong>{{ i18n.education.institution }}: </strong>
+              {{ education.institution }}
+            </li>
+            <li *ngIf="education.area">
+              <strong>{{ i18n.education.area }}: </strong>
+              {{ education.area }}
+            </li>
+            <li *ngIf="education.studyType">
+              <strong>{{ i18n.education.studyType }}: </strong>
+              {{ education.studyType }}
+            </li>
+            <li *ngIf="education.startDate">
+              <strong>{{ i18n.education.startDate }}: </strong>
+              {{ education.startDate | date: i18n.shortDateFormat }}
+            </li>
+            <li *ngIf="education.endDate">
+              <strong>{{ i18n.education.endDate }}: </strong>
+              {{ education.endDate | date: i18n.shortDateFormat }}
+            </li>
+            <li *ngIf="education.gpa">
+              <strong>{{ i18n.education.gpa }}: </strong>
+              {{ education.gpa }}
+            </li>
+            <li *ngIf="education.courses">
+              <strong>{{ i18n.education.courses }}: </strong>
+              <ul>
+                <li *ngFor="let course of education.courses">{{ course }}</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section *ngIf="resume.awards">
+      <h4>
+        <mat-icon>star</mat-icon>
+        {{ i18n.awards.header }}
+      </h4>
+      <ul>
+        <li *ngFor="let award of resume.awards">
+          <ul>
+            <li *ngIf="award.title">
+              <strong>{{ i18n.awards.title }}: </strong>{{ award.title }}
+            </li>
+            <li *ngIf="award.date">
+              <strong>{{ i18n.awards.date }}: </strong>
+              {{ award.date | date: i18n.dateFormat }}
+            </li>
+            <li *ngIf="award.awarder">
+              <strong>{{ i18n.awards.awarder }}: </strong>
+              {{ award.awarder }}
+            </li>
+            <li *ngIf="award.summary">
+              <strong>{{ i18n.awards.summary }}: </strong>
+              {{ award.summary }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section *ngIf="resume.skills">
+      <h4>
+        <mat-icon>computer</mat-icon>
+        {{ i18n.skills }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let skill of resume.skills">
+          <dt>{{ skill.name }}</dt>
+          <dd>
+            <ul>
+              <li *ngFor="let keyword of skill.keywords">{{ keyword }}</li>
+            </ul>
+          </dd>
+        </ng-container>
+      </dl>
+    </section>
+    <section *ngIf="resume.languages">
+      <h4>
+        <mat-icon>translate</mat-icon>
+        {{ i18n.languages }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let language of resume.languages">
+          <dt>{{ language.language }}</dt>
+          <dd>{{ language.fluency }}</dd>
+        </ng-container>
+      </dl>
+    </section>
+    <section *ngIf="resume.projects">
+      <h4>
+        <mat-icon>developer_board</mat-icon>
+        {{ i18n.projects.header }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let project of resume.projects">
+          <h5>
+            {{ project.name }}
+            <em>
+              {{ project.startDate | date: i18n.shortDateFormat }}
+              -
+              {{
+                project.endDate
+                  ? (project.endDate | date: i18n.shortDateFormat)
+                  : i18n.projects.now
+              }}
+            </em>
+          </h5>
+          <dd>
+            <ul>
+              <li *ngIf="project.entity">
+                <h6>{{ project.entity }}</h6>
+              </li>
+              <li *ngIf="project.url">
+                <a [href]="project.url" target="_blank" class="url">{{
+                  project.url
+                }}</a>
+              </li>
+              <li>
+                {{ project.description }}
+                <ul *ngIf="project.highlights">
+                  <li *ngFor="let highlight of project.highlights">
+                    {{ highlight }}
+                  </li>
+                </ul>
+              </li>
+              <li *ngIf="project.roles">
+                <h6>{{ i18n.projects.roles }}:</h6>
+                <ul class="styled">
+                  <li *ngFor="let role of project.roles">{{ role }}</li>
+                </ul>
+              </li>
+            </ul>
+          </dd>
+        </ng-container>
+      </dl>
+    </section>
+    <section *ngIf="resume.publications">
+      <h4>
+        <mat-icon>local_library</mat-icon>
+        {{ i18n.publications }}
+      </h4>
+      <ng-container *ngFor="let publication of resume.publications">
+        <h5>
+          {{ publication.name }}
+          <em>{{ publication.releaseDate | date: i18n.shortDateFormat }}</em>
+        </h5>
+        <ul>
+          <li>{{ publication.publisher }}</li>
+          <li>
+            <a [href]="publication.url" target="_blank" class="url">{{
+              publication.url
+            }}</a>
+          </li>
+          <li>{{ publication.summary }}</li>
+        </ul>
+      </ng-container>
+    </section>
+    <section *ngIf="resume.references">
+      <h4>
+        <mat-icon>speaker_notes</mat-icon>
+        {{ i18n.references }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let reference of resume.references">
+          <dt>{{ reference.name }}</dt>
+          <dd>{{ reference.reference }}</dd>
+        </ng-container>
+      </dl>
+    </section>
+    <section *ngIf="resume.work">
+        <h4>
+          <mat-icon>history</mat-icon>
+          {{i18n.work}}
+        </h4>
+        <dl>
+            <ng-container *ngFor="let work of resume.work">
+              <h5>
+                {{work.name}}
+                <em>{{work.startDate | date:i18n.shortDateFormat}} - {{work.endDate?(work.endDate | date:i18n.shortDateFormat):i18n.projects.now}}</em>
+              </h5>
+              <ul>
+                  <li *ngIf="work.url"><a [href]="work.url" target="_blank" class="url">{{work.url}}</a></li>
+                  <li *ngIf="work.description">{{work.description}}</li>
+                  <li *ngIf="work.position"><strong>{{work.position}}</strong></li>
+                  <li *ngIf="work.summary || work.highlights">
+                    {{work.summary}}
+                    <ul class="styled" *ngIf="work.highlights">
+                      <li *ngFor="let highlight of work.highlights">{{highlight}}</li>
+                    </ul>
+                  </li>
+                </ul>
+            </ng-container>
+          </dl>
+      </section>
+      <ng-template [ngIf]="resume.volunteer">
+        <h4>
+          <mat-icon>accessibility</mat-icon>
+          {{i18n.volunteer}}
+        </h4>
+        <dl>
+            <ng-container *ngFor="let volunteer of resume.volunteer">
+              <dt>
+                {{volunteer.organization}}
+                <em>{{volunteer.startDate | date:i18n.shortDateFormat}} - {{volunteer.endDate?(volunteer.endDate | date:i18n.shortDateFormat):i18n.projects.now}}</em>
+              </dt>
+              <dd>
+                <ul>
+                  <li *ngIf="volunteer.url"><a [href]="volunteer.url" target="_blank" class="url">{{volunteer.url}}</a></li>
+                  <li><strong>{{volunteer.position}}</strong></li>
+                  <li>
+                    {{volunteer.summary}}
+                    <ul class="styled" *ngIf="volunteer.highlights">
+                      <li *ngFor="let highlight of volunteer.highlights">{{highlight}}</li>
+                    </ul>
+                  </li>
+                </ul>
+              </dd>
+            </ng-container>
+          </dl>
+      </ng-template>
+  </main>
+</ng-container>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

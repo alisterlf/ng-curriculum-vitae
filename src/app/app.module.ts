@@ -5,9 +5,10 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ResumeComponent],
   imports: [
     // angular
     BrowserModule,
