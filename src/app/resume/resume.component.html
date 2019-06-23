@@ -43,7 +43,7 @@
     </div>
   </header>
   <main>
-    <section *ngIf="resume.education">
+    <section class="education" *ngIf="resume.education">
       <h4>
         <mat-icon>school</mat-icon>
         {{ i18n.education.header }}
@@ -85,7 +85,7 @@
         </li>
       </ul>
     </section>
-    <section *ngIf="resume.awards">
+    <section class="awards" *ngIf="resume.awards">
       <h4>
         <mat-icon>star</mat-icon>
         {{ i18n.awards.header }}
@@ -112,7 +112,7 @@
         </li>
       </ul>
     </section>
-    <section *ngIf="resume.skills">
+    <section class="skills" *ngIf="resume.skills">
       <h4>
         <mat-icon>computer</mat-icon>
         {{ i18n.skills }}
@@ -128,7 +128,7 @@
         </ng-container>
       </dl>
     </section>
-    <section *ngIf="resume.languages">
+    <section class="languages" *ngIf="resume.languages">
       <h4>
         <mat-icon>translate</mat-icon>
         {{ i18n.languages }}
@@ -140,7 +140,7 @@
         </ng-container>
       </dl>
     </section>
-    <section *ngIf="resume.projects">
+    <section class="projects" *ngIf="resume.projects">
       <h4>
         <mat-icon>developer_board</mat-icon>
         {{ i18n.projects.header }}
@@ -188,7 +188,7 @@
         </ng-container>
       </dl>
     </section>
-    <section *ngIf="resume.publications">
+    <section class="publications" *ngIf="resume.publications">
       <h4>
         <mat-icon>local_library</mat-icon>
         {{ i18n.publications }}
@@ -209,7 +209,7 @@
         </ul>
       </ng-container>
     </section>
-    <section *ngIf="resume.references">
+    <section class="references" *ngIf="resume.references">
       <h4>
         <mat-icon>speaker_notes</mat-icon>
         {{ i18n.references }}
@@ -221,45 +221,39 @@
         </ng-container>
       </dl>
     </section>
-    <section *ngIf="resume.work">
+    <section class="work" *ngIf="resume.work">
       <h4>
         <mat-icon>history</mat-icon>
         {{ i18n.work }}
       </h4>
-      <dl>
-        <ng-container *ngFor="let work of resume.work">
+      <ng-container *ngFor="let work of resume.work">
+        <header>
           <h5>
             {{ work.name }}
-            <em
-              >{{ work.startDate | date: i18n.shortDateFormat }} -
-              {{
-                work.endDate
-                  ? (work.endDate | date: i18n.shortDateFormat)
-                  : i18n.projects.now
-              }}</em
-            >
           </h5>
-          <ul>
-            <li *ngIf="work.url">
-              <a [href]="work.url" target="_blank" class="url">{{
-                work.url
-              }}</a>
-            </li>
-            <li *ngIf="work.description">{{ work.description }}</li>
-            <li *ngIf="work.position">
-              <strong>{{ work.position }}</strong>
-            </li>
-            <li *ngIf="work.summary || work.highlights">
-              {{ work.summary }}
-              <ul class="styled" *ngIf="work.highlights">
-                <li *ngFor="let highlight of work.highlights">
-                  {{ highlight }}
-                </li>
-              </ul>
+          <em>
+            {{ work.startDate | date: i18n.shortDateFormat }} -
+            {{
+              work.endDate
+                ? (work.endDate | date: i18n.shortDateFormat)
+                : i18n.projects.now
+            }}
+          </em>
+          <a [href]="work.url" target="_blank" class="url" *ngIf="work.url">{{
+            work.url
+          }}</a>
+          <h6 *ngIf="work.position">{{ work.position }}</h6>
+        </header>
+        <p *ngIf="work.description">{{ work.description }}</p>
+        <div *ngIf="work.summary || work.highlights">
+          {{ work.summary }}
+          <ul class="styled" *ngIf="work.highlights">
+            <li *ngFor="let highlight of work.highlights">
+              {{ highlight }}
             </li>
           </ul>
-        </ng-container>
-      </dl>
+        </div>
+      </ng-container>
     </section>
     <ng-template [ngIf]="resume.volunteer">
       <h4>
@@ -303,6 +297,26 @@
       </dl>
     </ng-template>
   </main>
+  <footer *ngIf="resume.interests">
+    <dl>
+      <dt>
+        <mat-icon>favorite</mat-icon>
+        <span>{{ i18n.interests }}</span>
+      </dt>
+      <dd>
+        <dl>
+          <ng-template ngFor let-interest [ngForOf]="resume.interests">
+            <dt>{{ interest.name }}</dt>
+            <dd>
+              <ul>
+                <li *ngFor="let keyword of interest.keywords">{{ keyword }}</li>
+              </ul>
+            </dd>
+          </ng-template>
+        </dl>
+      </dd>
+    </dl>
+  </footer>
 </ng-container>
 <ng-template #loading>
   <mat-spinner></mat-spinner>
