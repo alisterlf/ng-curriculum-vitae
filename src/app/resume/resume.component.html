@@ -1,6 +1,9 @@
 <ng-container *ngIf="resume$ | async; else loading">
   <header>
-    <h1>{{ resume.basics.name }}</h1>
+    <h1>
+      {{ getFirstName(resume.basics.name) }}<br />
+      {{ getSurname(resume.basics.name) }}
+    </h1>
     <h2 *ngIf="resume.basics.label">{{ resume.basics.label }}</h2>
     <ul>
       <li *ngIf="resume.basics.phone">
@@ -219,56 +222,86 @@
       </dl>
     </section>
     <section *ngIf="resume.work">
-        <h4>
-          <mat-icon>history</mat-icon>
-          {{i18n.work}}
-        </h4>
-        <dl>
-            <ng-container *ngFor="let work of resume.work">
-              <h5>
-                {{work.name}}
-                <em>{{work.startDate | date:i18n.shortDateFormat}} - {{work.endDate?(work.endDate | date:i18n.shortDateFormat):i18n.projects.now}}</em>
-              </h5>
-              <ul>
-                  <li *ngIf="work.url"><a [href]="work.url" target="_blank" class="url">{{work.url}}</a></li>
-                  <li *ngIf="work.description">{{work.description}}</li>
-                  <li *ngIf="work.position"><strong>{{work.position}}</strong></li>
-                  <li *ngIf="work.summary || work.highlights">
-                    {{work.summary}}
-                    <ul class="styled" *ngIf="work.highlights">
-                      <li *ngFor="let highlight of work.highlights">{{highlight}}</li>
-                    </ul>
+      <h4>
+        <mat-icon>history</mat-icon>
+        {{ i18n.work }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let work of resume.work">
+          <h5>
+            {{ work.name }}
+            <em
+              >{{ work.startDate | date: i18n.shortDateFormat }} -
+              {{
+                work.endDate
+                  ? (work.endDate | date: i18n.shortDateFormat)
+                  : i18n.projects.now
+              }}</em
+            >
+          </h5>
+          <ul>
+            <li *ngIf="work.url">
+              <a [href]="work.url" target="_blank" class="url">{{
+                work.url
+              }}</a>
+            </li>
+            <li *ngIf="work.description">{{ work.description }}</li>
+            <li *ngIf="work.position">
+              <strong>{{ work.position }}</strong>
+            </li>
+            <li *ngIf="work.summary || work.highlights">
+              {{ work.summary }}
+              <ul class="styled" *ngIf="work.highlights">
+                <li *ngFor="let highlight of work.highlights">
+                  {{ highlight }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ng-container>
+      </dl>
+    </section>
+    <ng-template [ngIf]="resume.volunteer">
+      <h4>
+        <mat-icon>accessibility</mat-icon>
+        {{ i18n.volunteer }}
+      </h4>
+      <dl>
+        <ng-container *ngFor="let volunteer of resume.volunteer">
+          <dt>
+            {{ volunteer.organization }}
+            <em
+              >{{ volunteer.startDate | date: i18n.shortDateFormat }} -
+              {{
+                volunteer.endDate
+                  ? (volunteer.endDate | date: i18n.shortDateFormat)
+                  : i18n.projects.now
+              }}</em
+            >
+          </dt>
+          <dd>
+            <ul>
+              <li *ngIf="volunteer.url">
+                <a [href]="volunteer.url" target="_blank" class="url">{{
+                  volunteer.url
+                }}</a>
+              </li>
+              <li>
+                <strong>{{ volunteer.position }}</strong>
+              </li>
+              <li>
+                {{ volunteer.summary }}
+                <ul class="styled" *ngIf="volunteer.highlights">
+                  <li *ngFor="let highlight of volunteer.highlights">
+                    {{ highlight }}
                   </li>
                 </ul>
-            </ng-container>
-          </dl>
-      </section>
-      <ng-template [ngIf]="resume.volunteer">
-        <h4>
-          <mat-icon>accessibility</mat-icon>
-          {{i18n.volunteer}}
-        </h4>
-        <dl>
-            <ng-container *ngFor="let volunteer of resume.volunteer">
-              <dt>
-                {{volunteer.organization}}
-                <em>{{volunteer.startDate | date:i18n.shortDateFormat}} - {{volunteer.endDate?(volunteer.endDate | date:i18n.shortDateFormat):i18n.projects.now}}</em>
-              </dt>
-              <dd>
-                <ul>
-                  <li *ngIf="volunteer.url"><a [href]="volunteer.url" target="_blank" class="url">{{volunteer.url}}</a></li>
-                  <li><strong>{{volunteer.position}}</strong></li>
-                  <li>
-                    {{volunteer.summary}}
-                    <ul class="styled" *ngIf="volunteer.highlights">
-                      <li *ngFor="let highlight of volunteer.highlights">{{highlight}}</li>
-                    </ul>
-                  </li>
-                </ul>
-              </dd>
-            </ng-container>
-          </dl>
-      </ng-template>
+              </li>
+            </ul>
+          </dd>
+        </ng-container>
+      </dl>
+    </ng-template>
   </main>
 </ng-container>
 <ng-template #loading>

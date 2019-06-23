@@ -102,4 +102,13 @@ export class ResumeComponent implements OnInit {
       }
     ][0];
   }
+  getFirstName(name: string): string {
+    return name.split(' ')[0];
+  }
+  getSurname(name: string): string {
+    return name
+      .split(' ')
+      .splice(1)
+      .join(' ');
+  }
 }
