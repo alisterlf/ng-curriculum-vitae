@@ -8,7 +8,8 @@ import { Resume } from './resume.model';
   providedIn: 'root'
 })
 export class ResumeService {
-  private resumeUrl = 'https://api.myjson.com/bins/194kfj'; // URL to web api
+  private resumeUrl =
+    'https://gist.githubusercontent.com/alisterlf/3578c8053001da3d0de0b4324331d882/raw/resume.json';
   constructor(private http: HttpClient) {}
 
   private handleError<T>(operation = 'operation', result?: T) {

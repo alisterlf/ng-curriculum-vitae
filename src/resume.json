@@ -214,16 +214,19 @@
       {
         "name": "Brasilprev",
         "description": "",
-        "position": "Front-end Developer",
+        "position": "Desenvolvedor Front-end",
         "url": "https://www.brasilprev.com.br",
         "startDate": "2019-02-07",
         "endDate": "",
-        "summary": "Desenvolvimento da area logada usando Angular 8 e Angular Material"
+        "summary": "Desenvolvimento da area logada usando Angular 8 e Angular Material",
+        "highlights": [
+          "Responsável pela configuração e manutenção dos processos de CI e CD no Azure DevOps"
+        ]
       },
       {
         "name": "XP Investimentos",
         "description": "",
-        "position": "Front-end Developer",
+        "position": "Desenvolvedor Front-end",
         "url": "https://www.xpi.com.br/",
         "startDate": "2018-02-05",
         "endDate": "2019-02-01",
@@ -301,7 +304,7 @@
       {
         "name": "Sapient AG2",
         "description": "",
-        "position": "Coordenador de Front-end",
+        "position": "Desenvolvedor Front-end",
         "url": "http://www.sapientag2.com.br",
         "startDate": "2012-07-16",
         "endDate": "2013-06-05",
@@ -497,7 +500,10 @@
         "url": "https://www.brasilprev.com.br",
         "startDate": "2019-02-07",
         "endDate": "",
-        "summary": "Development of the secure area of Brasilprev site using Angular 8 and Angular Material"
+        "summary": "Development of the secure area of Brasilprev site using Angular 8 and Angular Material",
+        "highlights": [
+          "Responsible for the setup and maintenance of CI and CD processes in Azure DevOps"
+        ]
       },
       {
         "name": "XP Investimentos",
@@ -580,7 +586,7 @@
       {
         "name": "Sapient AG2",
         "description": "",
-        "position": "Front-end Coordinator",
+        "position": "Front-end Developer",
         "url": "http://www.sapientag2.com.br",
         "startDate": "2012-07-16",
         "endDate": "2013-06-05",
