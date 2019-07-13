@@ -121,6 +121,23 @@ main {
     }
   }
   section {
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      h5,
+      h6 {
+        margin: 0;
+      }
+      em,
+      a {
+        text-align: right;
+      }
+
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted #666;
+    }
     h4 {
       display: flex;
       align-items: center;
@@ -134,6 +151,9 @@ main {
       border-left: none;
       border-right: none;
       border-top: none;
+      + header {
+        margin-top: 0;
+      }
     }
     h5 {
       display: flex;
@@ -148,6 +168,10 @@ main {
     h6 {
       font-size: 1rem;
       margin: 0.5rem 0 0.25rem 0;
+    }
+    ul.styled {
+      list-style: disc;
+      padding-left: 1rem;
     }
   }
   dl {

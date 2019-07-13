@@ -1,186 +1,186 @@
 export interface Resume {
-  'basics'?: {
-    'name'?: string;
+  basics?: {
+    name?: string;
     // e.g. Richard Hendriks
-    'birthdate'?: string;
+    birthdate?: string;
     // ISO 8601 date standard e.g. 2014-06-29
-    'label'?: string;
+    label?: string;
     // e.g. Web Developer
-    'image'?: string;
+    image?: string;
     // URL (as per RFC 3986) to a image in JPEG or PNG format
-    'email'?: string;
+    email?: string;
     // e.g. thomas@gmail.com
-    'phone'?: string;
+    phone?: string;
     // Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923
-    'url'?: string;
+    url?: string;
     // URL (as per RFC 3986) to your website, e.g. personal homepage
-    'summary'?: string;
+    summary?: string;
     // Write a short 2-3 sentence biography about yourself
-    'location'?: {
+    location?: {
       // e.g. 1234 Glücklichkeit Straße
-      'address'?: string;
-      'postalCode'?: string;
-      'city'?: string;
-      'countryCode'?: string;
+      address?: string;
+      postalCode?: string;
+      city?: string;
+      countryCode?: string;
       // code as per ISO-3166-1 ALPHA-2, e.g. US, AU, IN
-      'region'?: string;
+      region?: string;
       // The general region where you live. Can be a US state, or a province, for instance.
       [k: string]: any;
     };
-    'profiles'?: {
+    profiles?: {
       // Specify any number of social networks that you participate in
-      'network'?: string;
+      network?: string;
       // e.g. Facebook or Twitter
-      'username'?: string;
+      username?: string;
       // e.g. neutralthoughts
-      'url'?: string;
+      url?: string;
       // e.g. http://twitter.example.com/neutralthoughts
       [k: string]: any;
     }[];
     [k: string]: any;
   };
-  'work'?: {
-    'name'?: string;
+  work?: {
+    name?: string;
     // e.g. Facebook
-    'description'?: string;
+    description?: string;
     // e.g. Social Media Company
-    'position'?: string;
+    position?: string;
     // e.g. Software Engineer
-    'url'?: string;
+    url?: string;
     // e.g. http://facebook.example.com
-    'startDate'?: string;
+    startDate?: string;
     // ISO 8601 date standard e.g. 2014-06-29
-    'endDate'?: string;
+    endDate?: string;
     // e.g. 2012-06-29
-    'summary'?: string;
+    summary?: string;
     // Give an overview of your responsibilities at the company
-    'highlights'?: string[];
+    highlights?: string[];
     // Specify multiple accomplishments
     [k: string]: any;
   }[];
-  'volunteer'?: {
-    'organization'?: string;
+  volunteer?: {
+    organization?: string;
     // e.g. Facebook
-    'position'?: string;
+    position?: string;
     // e.g. Software Engineer
-    'url'?: string;
+    url?: string;
     // e.g. http://facebook.example.com
-    'startDate'?: string;
+    startDate?: string;
     // ISO 8601 date standard e.g. 2014-06-29
-    'endDate'?: string;
+    endDate?: string;
     // e.g. 2012-06-29
-    'summary'?: string;
+    summary?: string;
     // Give an overview of your responsibilities at the company
-    'highlights'?: string[];
+    highlights?: string[];
     // Specify accomplishments and achievements
     [k: string]: any;
   }[];
-  'education'?: {
-    'institution'?: string;
+  education?: {
+    institution?: string;
     // e.g. Massachusetts Institute of Technology
-    'area'?: string;
+    area?: string;
     // e.g. Arts
-    'studyType'?: string;
+    studyType?: string;
     // e.g. Bachelor
-    'startDate'?: string;
+    startDate?: string;
     // e.g. 2014-06-29
-    'endDate'?: string;
+    endDate?: string;
     // e.g. 2012-06-29
-    'gpa'?: string;
+    gpa?: string;
     // grade point average, e.g. 3.67/4.0
-    'courses'?: string[];
+    courses?: string[];
     // List notable courses/subjects
     [k: string]: any;
   }[];
-  'awards'?: {
+  awards?: {
     // Specify any awards you have received throughout your professional career
-    'title'?: string;
+    title?: string;
     // e.g. One of the 100 greatest minds of the century
-    'date'?: string;
+    date?: string;
     // e.g. 1989-06-12
-    'awarder'?: string;
+    awarder?: string;
     // e.g. Time Magazine
-    'summary'?: string;
+    summary?: string;
     // e.g. Received for my work with Quantum Physics
     [k: string]: any;
   }[];
-  'publications'?: {
+  publications?: {
     // Specify your publications through your career
-    'name'?: string;
+    name?: string;
     // e.g. The World Wide Web
-    'publisher'?: string;
+    publisher?: string;
     // e.g. IEEE, Computer Magazine
-    'releaseDate'?: string;
+    releaseDate?: string;
     // e.g. 1990-08-01
-    'url'?: string;
+    url?: string;
     // e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html
-    'summary'?: string;
+    summary?: string;
     // Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML.
     [k: string]: any;
   }[];
-  'skills'?: {
+  skills?: {
     // List out your professional skill-set
-    'name'?: string;
+    name?: string;
     // e.g. Web Development
-    'level'?: string;
+    level?: string;
     // e.g. Master
-    'keywords'?: string[];
+    keywords?: string[];
     // List some keywords pertaining to this skill
     [k: string]: any;
   }[];
-  'languages'?: {
+  languages?: {
     // List any other languages you speak
-    'language'?: string;
+    language?: string;
     // e.g. English, Spanish
-    'fluency'?: string;
+    fluency?: string;
     // e.g. Fluent, Beginner
     [k: string]: any;
   }[];
-  'interests'?: {
-    'name'?: string;
+  interests?: {
+    name?: string;
     // e.g. Philosophy
-    'keywords'?: string[];
+    keywords?: string[];
     [k: string]: any;
   }[];
-  'references'?: {
+  references?: {
     // List references you have received
-    'name'?: string;
+    name?: string;
     // e.g. Timothy Cook
-    'reference'?: string;
+    reference?: string;
     // e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
     [k: string]: any;
   }[];
-  'projects'?: {
+  projects?: {
     // Specify career projects
-    'name'?: string;
+    name?: string;
     // e.g. The World Wide Web
-    'description'?: string;
+    description?: string;
     // Short summary of project. e.g. Collated works of 2017.
-    'highlights'?: string[];
+    highlights?: string[];
     // Specify multiple features
-    'keywords'?: string[];
+    keywords?: string[];
     // Specify special elements involved
-    'startDate'?: string;
+    startDate?: string;
     // ISO 8601 date standard e.g. 2014-06-29
-    'endDate'?: string;
+    endDate?: string;
     // e.g. 2012-06-29
-    'url'?: string;
+    url?: string;
     // e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html
-    'roles'?: string[];
+    roles?: string[];
     // Specify your role on this project or in company
-    'entity'?: string;
+    entity?: string;
     // Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'
-    'type'?: string;
+    type?: string;
     //  e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'
     [k: string]: any;
   }[];
-  'meta'?: {
+  meta?: {
     // The schema version and any other tooling configuration lives here
-    'canonical'?: string;
+    canonical?: string;
     // URL (as per RFC 3986) to latest version of this document
-    'version'?: string;
+    version?: string;
     // A version field which follows semver - e.g. v1.0.0
-    'lastModified'?: string;
+    lastModified?: string;
     // Using ISO 8601 with YYYY-MM-DDThh:mm:ss
     [k: string]: any;
   };

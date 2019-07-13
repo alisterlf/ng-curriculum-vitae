@@ -212,13 +212,26 @@
     },
     "work": [
       {
+        "name": "Brasilprev",
+        "description": "",
+        "position": "Front-end Developer",
+        "url": "https://www.brasilprev.com.br",
+        "startDate": "2019-02-07",
+        "endDate": "",
+        "summary": "Desenvolvimento da area logada usando Angular 8 e Angular Material"
+      },
+      {
         "name": "XP Investimentos",
         "description": "",
         "position": "Front-end Developer",
         "url": "https://www.xpi.com.br/",
         "startDate": "2018-02-05",
-        "endDate": "",
-        "summary": "Desenvolvimento de uma plataforma Backoffice usando Angular 6 e Angular Material"
+        "endDate": "2019-02-01",
+        "summary": "Desenvolvimento de uma plataforma Backoffice usando Angular 6 e Angular Material",
+        "highlights": [
+          "Integração com Azure ADAL(Active Directory Authentication Libraries)",
+          "Integração com Power BI"
+        ]
       },
       {
         "name": "Mercado Eletrônico",
@@ -261,7 +274,7 @@
         ]
       },
       {
-        "name": "RDI - Restaurant Application Development International LLC",
+        "name": "RDI Software",
         "description": "",
         "position": "Desenvolvedor JavaScript",
         "url": "https://www.rdisoftware.com/",
@@ -352,16 +365,17 @@
       {
         "name": "Linguagens",
         "level": "",
-        "keywords": ["HTML5", "CSS3", "JavaScript (ES6)", "Node.js"]
+        "keywords": ["HTML5", "CSS3", "JavaScript (ES2015+)", "Node.js"]
       },
       {
         "name": "Frameworks e bibliotecas",
         "level": "",
         "keywords": [
           "Angular (1.x e 2+)",
-          "Bootstrap (2, 3 e 4)",
+          "Jasmine, Karma, Protractor",
           "Cordova, Ionic",
-          "Angular Material, Material Design Lite",
+          "Bootstrap",
+          "Angular Material",
           "Foundation",
           "jQuery",
           "Knockout",
@@ -382,7 +396,7 @@
           "RxJS",
           "Angular CLI",
           "C#.NET (Web Forms e MVC)",
-          "Adobe Photoshop",
+          "Adobe Suite",
           "Visual Studio",
           "Visual Studio Code"
         ]
@@ -392,7 +406,9 @@
         "level": "",
         "keywords": [
           "Single Page Applications",
-          "Responsive & Fluid Layout (FlexBox)",
+          "Responsive & Fluid Layout (FlexBox & CSS Grid)",
+          "Mobile first, Offline first",
+          "Programação Funcional e Reativa",
           "Cross-browser Compatibility",
           "Web Standards",
           "Acessibilidade",
@@ -404,14 +420,7 @@
       {
         "name": "Estou aprendendo",
         "level": "",
-        "keywords": [
-          "React",
-          "Webpack",
-          "CSS Grid layout",
-          "Jasmine",
-          "Karma",
-          "Protractor"
-        ]
+        "keywords": ["NgRx", "React Native"]
       }
     ],
     "languages": [
@@ -482,13 +491,26 @@
     },
     "work": [
       {
+        "name": "Brasilprev",
+        "description": "",
+        "position": "Front-end Developer",
+        "url": "https://www.brasilprev.com.br",
+        "startDate": "2019-02-07",
+        "endDate": "",
+        "summary": "Development of the secure area of Brasilprev site using Angular 8 and Angular Material"
+      },
+      {
         "name": "XP Investimentos",
         "description": "",
         "position": "Front-end Developer",
         "url": "https://www.xpi.com.br/",
         "startDate": "2018-02-05",
         "endDate": "",
-        "summary": "Development of a Backoffice platform using Angular 6 and Angular Material"
+        "summary": "Development of a Backoffice platform using Angular 6 and Angular Material",
+        "highlights": [
+          "Azure ADAL(Active Directory Authentication Libraries) integration",
+          "Power BI integration"
+        ]
       },
       {
         "name": "Mercado Eletrônico",
@@ -531,7 +553,7 @@
         ]
       },
       {
-        "name": "RDI - Restaurant Application Development International LLC",
+        "name": "RDI Software",
         "description": "",
         "position": "JavaScript Developer",
         "url": "https://www.rdisoftware.com/",
@@ -622,21 +644,21 @@
       {
         "name": "Languages",
         "level": "",
-        "keywords": ["HTML5", "CSS3", "JavaScript", "Node.js"]
+        "keywords": ["HTML5", "CSS3", "JavaScript (ES2015+)", "Node.js"]
       },
       {
         "name": "Frameworks and libs",
         "level": "",
         "keywords": [
-          "Angular",
-          "AngularJs",
-          "Bootstrap 4",
+          "Angular (1.x e 2+)",
+          "Jasmine, Karma, Protractor",
           "Cordova, Ionic",
-          "Angular Material, Material Design Lite",
+          "Bootstrap",
+          "Angular Material",
           "Foundation",
           "jQuery",
           "Knockout",
-          "Hogan.js, Handlebars and Mustache"
+          "Hogan.js, Handlebars e Mustache"
         ]
       },
       {
@@ -653,7 +675,7 @@
           "RxJS",
           "Angular CLI",
           "C#.NET (Web Forms and MVC)",
-          "Adobe Photoshop",
+          "Adobe Suite",
           "Visual Studio",
           "Visual Studio Code"
         ]
@@ -663,7 +685,9 @@
         "level": "",
         "keywords": [
           "Single Page Applications",
-          "Responsive & Fluid Layout (FlexBox and CSS Grid Layout)",
+          "Responsive & Fluid Layout (FlexBox & CSS Grid)",
+          "Mobile first, Offline first",
+          "Functional reactive programming",
           "Cross-browser Compatibility",
           "Web Standards",
           "Acessibilidade",
@@ -675,7 +699,7 @@
       {
         "name": "I am learning",
         "level": "",
-        "keywords": ["React", "Jasmine", "Karma", "Protractor"]
+        "keywords": ["NgRx", "React Native"]
       }
     ],
     "languages": [

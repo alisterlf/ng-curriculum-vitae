@@ -239,10 +239,10 @@
                 : i18n.projects.now
             }}
           </em>
+          <h6 *ngIf="work.position">{{ work.position }}</h6>
           <a [href]="work.url" target="_blank" class="url" *ngIf="work.url">{{
             work.url
           }}</a>
-          <h6 *ngIf="work.position">{{ work.position }}</h6>
         </header>
         <p *ngIf="work.description">{{ work.description }}</p>
         <div *ngIf="work.summary || work.highlights">
