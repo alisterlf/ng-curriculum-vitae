@@ -22,7 +22,6 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
     this.resume$ = this.resumeService.getResume().pipe(
       tap((resume: Resume) => {
-        console.log(resume);
         this.resume = resume;
         this.titleService.setTitle(
           `${this.resume.basics.name} - Curriculum Vitae`
