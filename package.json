@@ -4,14 +4,14 @@
   "private": true,
   "scripts": {
     "build": "ng build --prod --verbose",
+    "deploy": "ng build --prod && angular-cli-ghpages  --repo=git@github.com:alisterlf/alisterlf.github.io.git  --dir=dist/ng-curriculum-vitae  --branch master",
     "e2e": "ng e2e",
     "postinstall": "npm run prettier -s && ivy-ngcc",
     "lint": "ng lint",
     "ng": "ng",
     "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,json,scss}\"",
     "start": "ng serve --aot",
-    "test": "ng test",
-    "deploy": "ng build --prod && angular-cli-ghpages  --repo=git@github.com:alisterlf/alisterlf.github.io.git  --dir=dist/ng-curriculum-vitae  --branch master"
+    "test": "ng test"
   },
   "prettier": {
     "overrides": [

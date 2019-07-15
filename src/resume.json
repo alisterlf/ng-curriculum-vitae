@@ -376,10 +376,11 @@
         "keywords": [
           "Angular (1.x e 2+)",
           "Jasmine, Karma, Protractor",
+          "RxJS",
+          "Angular Material",
+          "Moment.js, ag-Grid",
           "Cordova, Ionic",
           "Bootstrap",
-          "Angular Material",
-          "Foundation",
           "jQuery",
           "Knockout",
           "Hogan.js, Handlebars e Mustache"
@@ -396,9 +397,8 @@
           "Webpack, Grunt, Gulp",
           "NPM, Bower",
           "ESLint, TSLint",
-          "RxJS",
           "Angular CLI",
-          "C#.NET (Web Forms e MVC)",
+          "C#.NET (Web Forms, MVC & Web API)",
           "Adobe Suite",
           "Visual Studio",
           "Visual Studio Code"
@@ -408,7 +408,8 @@
         "name": "Técnicas",
         "level": "",
         "keywords": [
-          "Single Page Applications",
+          "Single Page Applications (SPA)",
+          "Progressive Web App (PWA)",
           "Responsive & Fluid Layout (FlexBox & CSS Grid)",
           "Mobile first, Offline first",
           "Programação Funcional e Reativa",
@@ -658,10 +659,11 @@
         "keywords": [
           "Angular (1.x e 2+)",
           "Jasmine, Karma, Protractor",
+          "RxJS",
+          "Angular Material",
+          "Moment.js, ag-Grid",
           "Cordova, Ionic",
           "Bootstrap",
-          "Angular Material",
-          "Foundation",
           "jQuery",
           "Knockout",
           "Hogan.js, Handlebars e Mustache"
@@ -678,9 +680,8 @@
           "Webpack, Grunt, Gulp",
           "NPM, Bower",
           "ESLint, TSLint",
-          "RxJS",
           "Angular CLI",
-          "C#.NET (Web Forms and MVC)",
+          "C#.NET (Web Forms, MVC & Web API)",
           "Adobe Suite",
           "Visual Studio",
           "Visual Studio Code"
@@ -690,13 +691,14 @@
         "name": "Techniques",
         "level": "",
         "keywords": [
-          "Single Page Applications",
+          "Single Page Applications (SPA)",
+          "Progressive Web App (PWA)",
           "Responsive & Fluid Layout (FlexBox & CSS Grid)",
           "Mobile first, Offline first",
           "Functional reactive programming",
           "Cross-browser Compatibility",
           "Web Standards",
-          "Acessibilidade",
+          "Accessibility",
           "SEO",
           "WAI-ARIA",
           "Microformats"
