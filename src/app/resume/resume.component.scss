@@ -1,0 +1,183 @@
+:host {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 960px;
+}
+mat-spinner {
+  margin: 8rem auto;
+}
+:host > header {
+  display: grid;
+  width: 100%;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: 45% 55%;
+  grid-template-areas:
+    "title info"
+    "subtitle info"
+    "summary summary";
+  > h1 {
+    grid-area: title;
+    font-size: 4rem;
+    margin: 0;
+  }
+  > h2 {
+    grid-area: subtitle;
+    margin: 0;
+    align-self: end;
+    font-size: 2rem;
+  }
+  > ul {
+    grid-area: info;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: flex;
+      align-items: center;
+      line-height: 1.85rem;
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+      mat-icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  > div {
+    grid-area: summary;
+    border: 0.23rem solid #444;
+    border-left: none;
+    border-right: none;
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+main {
+  display: grid;
+  width: 100%;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: 45% 55%;
+  grid-template-areas:
+    "education work"
+    "awards work"
+    "skills work"
+    "languages work"
+    "projects work"
+    "publications work"
+    "references work";
+  .education {
+    grid-area: education;
+  }
+  .awards {
+    grid-area: awards;
+  }
+  .skills {
+    grid-area: skills;
+  }
+  .languages {
+    grid-area: languages;
+  }
+  .projects {
+    grid-area: projects;
+  }
+  .publications {
+    grid-area: publications;
+  }
+  .references {
+    grid-area: references;
+  }
+  .work {
+    grid-area: work;
+  }
+  .education,
+  .awards {
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    & > ul > li {
+      margin-bottom: 1rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    ul {
+      list-style: disc;
+      padding-left: 1rem;
+    }
+  }
+  section {
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      h5,
+      h6 {
+        margin: 0;
+      }
+      em,
+      a {
+        text-align: right;
+      }
+
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted #666;
+    }
+    h4 {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0 0.5rem 0;
+      padding: 0;
+      font-size: 1.5rem;
+      mat-icon {
+        margin-right: 0.5rem;
+      }
+      border: 0.23rem solid #444;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+      + header {
+        margin-top: 0;
+      }
+    }
+    h5 {
+      display: flex;
+      font-size: 1.25rem;
+      margin: 1rem 0 0.5rem 0;
+      em {
+        margin-left: auto;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+    h6 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0.25rem 0;
+    }
+    ul.styled {
+      list-style: disc;
+      padding-left: 1rem;
+    }
+  }
+  dl {
+    dt {
+      margin: 0.5rem 0 0.25rem 0;
+      font-weight: 500;
+    }
+  }
+}
