@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "angular.ng-template",
+    "Angular.ng-template",
+    "christian-kohler.path-intellisense",
+    "cssho.vscode-svgviewer",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "EditorConfig.EditorConfig",
+    "eg2.tslint",
+    "eg2.vscode-npm-script",
+    "esbenp.prettier-vscode",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "johnpapa.Angular2",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "ms-vsts.team",
+    "msjsdiag.debugger-for-chrome",
+    "nrwl.angular-console",
+    "robinbentley.sass-indented",
+    "Shan.code-settings-sync",
+    "SimonTest.simontest",
+    "wesbos.theme-cobalt2",
+    "Zignd.html-css-class-completion"
+  ]
+}
