@@ -1,11 +1,19 @@
-<ng-container *ngIf="resume$ | async; else loading">
+<ng-container *ngIf="resume$ | async as resume; else loading">
   <header>
-    <h1>
-      {{ getFirstName(resume.basics.name) }}<br />
-      {{ getSurname(resume.basics.name) }}
+    <div
+      class="image"
+      [style.backgroundImage]="'url(' + resume.basics.image + ')'"
+    ></div>
+    <h1 class="name">
+      <span class="firstname">
+        {{ getFirstName(resume.basics.name) }}
+      </span>
+      <span class="surname">
+        {{ getSurname(resume.basics.name) }}
+      </span>
     </h1>
-    <h2 *ngIf="resume.basics.label">{{ resume.basics.label }}</h2>
-    <ul>
+    <h2 class="label" *ngIf="resume.basics.label">{{ resume.basics.label }}</h2>
+    <ul class="profile">
       <li *ngIf="resume.basics.phone">
         <mat-icon>phone</mat-icon> {{ resume.basics.phone }}
       </li>
@@ -37,7 +45,7 @@
         </span>
       </li>
     </ul>
-    <div *ngIf="resume.basics.summary">
+    <div class="summary" *ngIf="resume.basics.summary">
       <h3>{{ i18n.summary }}</h3>
       <p>{{ resume.basics.summary }}</p>
     </div>

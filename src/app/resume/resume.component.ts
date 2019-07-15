@@ -6,13 +6,11 @@ import { Resume } from './resume.model';
 import { ResumeService } from './resume.service';
 
 @Component({
-  selector: 'app-resume',
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
   resume$: Observable<Resume>;
-  resume: Resume;
   i18n: any;
   constructor(
     private resumeService: ResumeService,
@@ -22,10 +20,7 @@ export class ResumeComponent implements OnInit {
   ngOnInit() {
     this.resume$ = this.resumeService.getResume().pipe(
       tap((resume: Resume) => {
-        this.resume = resume;
-        this.titleService.setTitle(
-          `${this.resume.basics.name} - Curriculum Vitae`
-        );
+        this.titleService.setTitle(`${resume.basics.name} - Curriculum Vitae`);
       })
     );
     this.i18n = [
@@ -101,10 +96,10 @@ export class ResumeComponent implements OnInit {
       }
     ][0];
   }
-  getFirstName(name: string): string {
+  public getFirstName(name: string): string {
     return name.split(' ')[0];
   }
-  getSurname(name: string): string {
+  public getSurname(name: string): string {
     return name
       .split(' ')
       .splice(1)
