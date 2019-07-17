@@ -157,7 +157,7 @@
       </h4>
       <dl>
         <ng-container *ngFor="let project of resume.projects">
-          <h5>
+          <dt>
             {{ project.name }}
             <em>
               {{ project.startDate | date: i18n.shortDateFormat }}
@@ -168,7 +168,7 @@
                   : i18n.projects.now
               }}
             </em>
-          </h5>
+          </dt>
           <dd>
             <ul>
               <li *ngIf="project.entity">
