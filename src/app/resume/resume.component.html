@@ -1,9 +1,8 @@
 <ng-container *ngIf="resume$ | async as resume; else loading">
   <header>
-    <div
-      class="image"
-      [style.backgroundImage]="'url(' + resume.basics.image + ')'"
-    ></div>
+    <div class="image">
+      <img [src]="resume.basics.image" alt="Profile image" />
+    </div>
     <h1 class="name">
       <span class="firstname">
         {{ getFirstName(resume.basics.name) }}
@@ -13,47 +12,50 @@
       </span>
     </h1>
     <h2 class="label" *ngIf="resume.basics.label">{{ resume.basics.label }}</h2>
-    <ul class="profile">
-      <li *ngIf="resume.basics.phone">
-        <mat-icon>phone</mat-icon> {{ resume.basics.phone }}
-      </li>
-      <li *ngIf="resume.basics.email">
-        <mat-icon>email</mat-icon> {{ resume.basics.email }}
-      </li>
-      <li *ngIf="resume.basics.location">
-        <mat-icon>location_on</mat-icon>
-        {{ resume.basics.location.city }} - {{ resume.basics.location.region }}
-      </li>
-      <li *ngIf="resume.basics.birthdate">
-        <mat-icon>today</mat-icon>
-        {{ resume.basics.birthdate | date: i18n.dateFormat }}
-      </li>
-      <li *ngIf="resume.basics.url">
-        <mat-icon>link</mat-icon>
-        <a [href]="resume.basics.url" target="_blank">
-          {{ resume.basics.url }}
-        </a>
-      </li>
-      <li *ngFor="let profile of resume.basics.profiles">
-        <mat-icon [title]="profile.network">link</mat-icon>
-        <span class="url">
-          {{ profile.network }}:
-          <a [href]="profile.url" target="_blank" *ngIf="profile.url">
-            {{ profile.url }}
+    <div class="profile">
+      <h3><mat-icon [inline]="true">info</mat-icon>Dados pessoais</h3>
+      <ul>
+        <li *ngIf="resume.basics.phone">
+          <mat-icon [inline]="true">phone</mat-icon> {{ resume.basics.phone }}
+        </li>
+        <li *ngIf="resume.basics.email">
+          <mat-icon [inline]="true">email</mat-icon> {{ resume.basics.email }}
+        </li>
+        <li *ngIf="resume.basics.location">
+          <mat-icon [inline]="true">location_on</mat-icon>
+          {{ resume.basics.location.city }} -
+          {{ resume.basics.location.region }}
+        </li>
+        <li *ngIf="resume.basics.birthdate">
+          <mat-icon [inline]="true">today</mat-icon>
+          {{ resume.basics.birthdate | date: i18n.dateFormat }}
+        </li>
+        <li *ngIf="resume.basics.url">
+          <mat-icon [inline]="true">link</mat-icon>
+          <a [href]="resume.basics.url" target="_blank">
+            {{ resume.basics.url }}
           </a>
-          <span *ngIf="!profile.url">profile.username</span>
-        </span>
-      </li>
-    </ul>
+        </li>
+        <li *ngFor="let profile of resume.basics.profiles">
+          <mat-icon [inline]="true" [title]="profile.network">link</mat-icon>
+          <span class="url">
+            <a [href]="profile.url" target="_blank" *ngIf="profile.url">
+              {{ profile.url }}
+            </a>
+            <span *ngIf="!profile.url">profile.username</span>
+          </span>
+        </li>
+      </ul>
+    </div>
     <div class="summary" *ngIf="resume.basics.summary">
-      <h3>{{ i18n.summary }}</h3>
+      <h3><mat-icon [inline]="true">person</mat-icon>{{ i18n.summary }}</h3>
       <p>{{ resume.basics.summary }}</p>
     </div>
   </header>
   <main>
     <section class="education" *ngIf="resume.education">
       <h4>
-        <mat-icon>school</mat-icon>
+        <mat-icon [inline]="true">school</mat-icon>
         {{ i18n.education.header }}
       </h4>
       <ul>
@@ -95,7 +97,7 @@
     </section>
     <section class="awards" *ngIf="resume.awards">
       <h4>
-        <mat-icon>star</mat-icon>
+        <mat-icon [inline]="true">star</mat-icon>
         {{ i18n.awards.header }}
       </h4>
       <ul>
@@ -122,7 +124,7 @@
     </section>
     <section class="skills" *ngIf="resume.skills">
       <h4>
-        <mat-icon>computer</mat-icon>
+        <mat-icon [inline]="true">computer</mat-icon>
         {{ i18n.skills }}
       </h4>
       <dl>
@@ -138,7 +140,7 @@
     </section>
     <section class="languages" *ngIf="resume.languages">
       <h4>
-        <mat-icon>translate</mat-icon>
+        <mat-icon [inline]="true">translate</mat-icon>
         {{ i18n.languages }}
       </h4>
       <dl>
@@ -150,7 +152,7 @@
     </section>
     <section class="projects" *ngIf="resume.projects">
       <h4>
-        <mat-icon>developer_board</mat-icon>
+        <mat-icon [inline]="true">developer_board</mat-icon>
         {{ i18n.projects.header }}
       </h4>
       <dl>
@@ -198,7 +200,7 @@
     </section>
     <section class="publications" *ngIf="resume.publications">
       <h4>
-        <mat-icon>local_library</mat-icon>
+        <mat-icon [inline]="true">local_library</mat-icon>
         {{ i18n.publications }}
       </h4>
       <ng-container *ngFor="let publication of resume.publications">
@@ -219,7 +221,7 @@
     </section>
     <section class="references" *ngIf="resume.references">
       <h4>
-        <mat-icon>speaker_notes</mat-icon>
+        <mat-icon [inline]="true">speaker_notes</mat-icon>
         {{ i18n.references }}
       </h4>
       <dl>
@@ -231,7 +233,7 @@
     </section>
     <section class="work" *ngIf="resume.work">
       <h4>
-        <mat-icon>history</mat-icon>
+        <mat-icon [inline]="true">history</mat-icon>
         {{ i18n.work }}
       </h4>
       <ng-container *ngFor="let work of resume.work">
@@ -265,7 +267,7 @@
     </section>
     <ng-template [ngIf]="resume.volunteer">
       <h4>
-        <mat-icon>accessibility</mat-icon>
+        <mat-icon [inline]="true">accessibility</mat-icon>
         {{ i18n.volunteer }}
       </h4>
       <dl>
@@ -308,7 +310,7 @@
   <footer *ngIf="resume.interests">
     <dl>
       <dt>
-        <mat-icon>favorite</mat-icon>
+        <mat-icon [inline]="true">favorite</mat-icon>
         <span>{{ i18n.interests }}</span>
       </dt>
       <dd>

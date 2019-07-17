@@ -4,6 +4,9 @@
 mat-spinner {
   margin: 8rem auto;
 }
+mat-icon {
+  margin-right: 0.5rem;
+}
 .image {
   grid-area: image;
 }
@@ -49,6 +52,23 @@ mat-spinner {
     padding: 1rem 0;
     width: 960px;
   }
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    .firstname {
+      display: block;
+    }
+  }
+  h2 {
+    margin: 0;
+    align-self: end;
+    font-size: 2rem;
+  }
+  h3,
+  h4 {
+    display: flex;
+    align-items: center;
+  }
   :host > header {
     display: grid;
     width: 100%;
@@ -56,44 +76,32 @@ mat-spinner {
     grid-row-gap: 1rem;
     grid-template-columns: 45% 55%;
     grid-template-areas:
-      "title info"
-      "subtitle info"
+      "name info"
+      "label info"
       "summary summary";
-    > h1 {
-      grid-area: title;
-      font-size: 4rem;
-      margin: 0;
-      .firstname {
-        display: block;
-      }
-    }
-    > h2 {
-      grid-area: subtitle;
-      margin: 0;
-      align-self: end;
-      font-size: 2rem;
-    }
-    > ul {
+    > .profile {
       grid-area: info;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li {
-        display: flex;
-        align-items: center;
-        line-height: 1.85rem;
-        &:first-child {
-          padding-top: 0;
-        }
-        &:last-child {
-          padding-bottom: 0;
-        }
-        mat-icon {
-          margin-right: 0.5rem;
+      h3 {
+        display: none;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: flex;
+          align-items: center;
+          line-height: 1.85rem;
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
         }
       }
     }
-    > div {
+    > .summary {
       grid-area: summary;
       border: 0.23rem solid #444;
       border-left: none;
@@ -209,15 +217,34 @@ mat-spinner {
 }
 @media screen {
   :host {
-    background: #bada55;
-    padding: 10rem 2rem 2rem;
-    > header,
-    > main,
-    > footer {
-      background: #fff;
+    background: #fff;
+    padding: 3rem;
+    margin-top: 10rem;
+    h1 {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 3rem;
+    }
+    h2 {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: #666;
+    }
+    h3 {
+      margin: 0 0 1rem 0;
+    }
+    h3,
+    h4 {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: #427c99;
+      font-size: 2rem;
     }
     > header {
-      position: relative;
       display: grid;
       grid-template-columns: 60% 40%;
       grid-template-areas:
@@ -226,31 +253,40 @@ mat-spinner {
         "label label"
         "summary profile";
       grid-gap: 1rem;
-      padding: 1rem;
       box-sizing: border-box;
-      padding-top: 10rem;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #666;
       .image {
-        position: absolute;
-        border: 0.5rem solid #bada55;
-        background-size: contain;
-        border-radius: 50%;
-        width: 250px;
-        height: 250px;
-        top: -300px;
-        left: calc(50% - 133px);
-      }
-      h1 {
-        margin: 0;
+        background: linear-gradient(
+          to bottom,
+          #bada55 0,
+          #bada55 2rem,
+          rgba(0, 0, 0, 0) 2rem,
+          rgba(0, 0, 0, 0) 100%
+        );
         text-align: center;
-        text-transform: uppercase;
-        font-size: 3rem;
+        margin-top: -13rem;
+        img {
+          border: 0.5rem solid #bada55;
+          border-radius: 50%;
+          width: 250px;
+          height: 250px;
+        }
       }
-      h2 {
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        list-style: none;
+        padding: 0;
         margin: 0;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 2rem;
-        color: #666;
+        li {
+          display: flex;
+          align-items: center;
+          mat-icon {
+            font-size: 1.75rem;
+          }
+        }
       }
     }
     h4,
@@ -260,9 +296,9 @@ mat-spinner {
     main {
       display: grid;
       width: 100%;
-      grid-column-gap: 2rem;
-      grid-row-gap: 1rem;
-      padding: 1rem;
+      grid-column-gap: 1rem;
+      grid-row-gap: 2rem;
+      padding: 1rem 2rem;
       box-sizing: border-box;
       grid-template-columns: 60% 40%;
       grid-template-areas:
@@ -273,6 +309,44 @@ mat-spinner {
         "work projects"
         "work publications"
         "work references";
+      section {
+        header {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "jobPlace"
+            "jobDate"
+            "jobLink"
+            "jobTitle";
+          margin-top: 1rem;
+          background: #ccc;
+          h5,
+          em,
+          a {
+            padding: 0 1rem;
+            margin: 0;
+          }
+          h5 {
+            grid-area: jobPlace;
+            font-size: 1.25rem;
+            padding: 1rem 1rem 0 1rem;
+            margin: 0;
+          }
+          em {
+            grid-area: jobDate;
+          }
+          a {
+            grid-area: jobLink;
+          }
+          h6 {
+            background: #fff;
+            grid-area: jobTitle;
+            font-size: 1rem;
+            margin: 1rem 0 0 0;
+            padding-top: 1rem;
+          }
+        }
+      }
     }
   }
 }
