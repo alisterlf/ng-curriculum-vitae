@@ -46,10 +46,16 @@ mat-icon {
 .work {
   grid-area: work;
 }
+:host main dl {
+  margin-bottom: 0;
+  dd:last-child {
+    padding-bottom: 0;
+  }
+}
 @media print {
   :host {
-    margin: 0 auto;
-    padding: 1rem 0;
+    margin: 0;
+    padding: 0rem 0;
     width: 960px;
   }
   h1 {
@@ -228,9 +234,9 @@ mat-icon {
 }
 @media screen {
   :host {
-    background: #fff;
     padding: 3rem;
     margin-top: 10rem;
+    background: #fff;
     h1 {
       margin: 0;
       text-align: center;
@@ -268,13 +274,6 @@ mat-icon {
       padding: 1rem 2rem;
       border-bottom: 1px solid #666;
       .image {
-        background: linear-gradient(
-          to bottom,
-          #bada55 0,
-          #bada55 2rem,
-          rgba(0, 0, 0, 0) 2rem,
-          rgba(0, 0, 0, 0) 100%
-        );
         text-align: center;
         margin-top: -13rem;
         img {
@@ -385,13 +384,85 @@ mat-icon {
           padding: 0;
           list-style: none;
           margin: 0;
-          .styled {
+          &.styled {
             padding-left: 1rem;
             list-style: disc;
           }
         }
         dd {
           padding-bottom: 1rem;
+        }
+      }
+      section.projects dt {
+        display: block;
+        margin: 1rem 0 0.5rem 0;
+        em {
+          margin-left: auto;
+          font-weight: 400;
+          font-size: 1rem;
+          display: block;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  :host {
+    padding: 3rem 1rem;
+    > header {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "image"
+        "name"
+        "label"
+        "profile"
+        "summary";
+      padding: 1rem 0;
+      border: none;
+    }
+    h1 {
+      font-size: 2.5rem;
+      .firstname {
+        display: block;
+      }
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    main {
+      grid-template-areas:
+        "education"
+        "awards"
+        "skills"
+        "languages"
+        "projects"
+        "publications"
+        "references"
+        "work";
+      padding: 0;
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+      section {
+        margin-bottom: 1rem;
+        header {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "jobPlace"
+            "jobDate"
+            "jobLink"
+            "jobTitle";
+          margin-top: 1rem;
+          align-items: flex-end;
+          background: #eee;
         }
       }
     }
