@@ -1,11 +1,19 @@
 :host {
   display: block;
+  .mat-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
 }
 mat-spinner {
   margin: 8rem auto;
 }
-mat-icon {
-  margin-right: 0.5rem;
+header,
+main {
+  mat-icon {
+    margin-right: 0.5rem;
+  }
 }
 .image {
   grid-area: image;
@@ -57,6 +65,9 @@ mat-icon {
     margin: 0;
     padding: 0rem 0;
     width: 960px;
+    .mat-fab {
+      display: none;
+    }
   }
   h1 {
     font-size: 4rem;

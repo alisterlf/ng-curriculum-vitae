@@ -105,4 +105,7 @@ export class ResumeComponent implements OnInit {
       .splice(1)
       .join(' ');
   }
+  public print() {
+    window.print();
+    }
 }
