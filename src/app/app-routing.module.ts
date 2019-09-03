@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'resume', pathMatch: 'full' },
+  { path: '', component: ResumeComponent },
   {
     path: 'resume',
     component: ResumeComponent

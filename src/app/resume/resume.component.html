@@ -39,7 +39,12 @@
         <li *ngFor="let profile of resume.basics.profiles">
           <mat-icon [inline]="true" [title]="profile.network">link</mat-icon>
           <span class="url">
-            <a [href]="profile.url" target="_blank" *ngIf="profile.url">
+            <a
+              [href]="profile.url"
+              target="_blank"
+              *ngIf="profile.url"
+              rel="noreferrer"
+            >
               {{ profile.url }}
             </a>
             <span *ngIf="!profile.url">profile.username</span>
@@ -175,9 +180,13 @@
                 <h6>{{ project.entity }}</h6>
               </li>
               <li *ngIf="project.url">
-                <a [href]="project.url" target="_blank" class="url">{{
-                  project.url
-                }}</a>
+                <a
+                  [href]="project.url"
+                  target="_blank"
+                  class="url"
+                  rel="noreferrer"
+                  >{{ project.url }}</a
+                >
               </li>
               <li>
                 {{ project.description }}
@@ -211,9 +220,13 @@
         <ul>
           <li>{{ publication.publisher }}</li>
           <li>
-            <a [href]="publication.url" target="_blank" class="url">{{
-              publication.url
-            }}</a>
+            <a
+              [href]="publication.url"
+              target="_blank"
+              class="url"
+              rel="noreferrer"
+              >{{ publication.url }}</a
+            >
           </li>
           <li>{{ publication.summary }}</li>
         </ul>
@@ -250,9 +263,14 @@
             }}
           </em>
           <h6 *ngIf="work.position">{{ work.position }}</h6>
-          <a [href]="work.url" target="_blank" class="url" *ngIf="work.url">{{
-            work.url
-          }}</a>
+          <a
+            [href]="work.url"
+            target="_blank"
+            class="url"
+            *ngIf="work.url"
+            rel="noreferrer"
+            >{{ work.url }}</a
+          >
         </header>
         <p *ngIf="work.description">{{ work.description }}</p>
         <div *ngIf="work.summary || work.highlights">
@@ -286,9 +304,13 @@
           <dd>
             <ul>
               <li *ngIf="volunteer.url">
-                <a [href]="volunteer.url" target="_blank" class="url">{{
-                  volunteer.url
-                }}</a>
+                <a
+                  [href]="volunteer.url"
+                  target="_blank"
+                  class="url"
+                  rel="noreferrer"
+                  >{{ volunteer.url }}</a
+                >
               </li>
               <li>
                 <strong>{{ volunteer.position }}</strong>

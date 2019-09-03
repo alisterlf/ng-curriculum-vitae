@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Resume } from './resume.model';
@@ -14,13 +14,18 @@ export class ResumeComponent implements OnInit {
   i18n: any;
   constructor(
     private resumeService: ResumeService,
-    private titleService: Title
+    private title: Title,
+    private meta: Meta
   ) {}
 
   ngOnInit() {
     this.resume$ = this.resumeService.getResume().pipe(
       tap((resume: Resume) => {
-        this.titleService.setTitle(`${resume.basics.name} - Curriculum Vitae`);
+        this.title.setTitle(`${resume.basics.name} - Curriculum Vitae`);
+        this.meta.addTag({
+          name: 'description',
+          content: `${resume.basics.name} - Curriculum Vitae: ${resume.basics.summary}`
+        });
       })
     );
     this.i18n = [
@@ -107,5 +112,5 @@ export class ResumeComponent implements OnInit {
   }
   public print() {
     window.print();
-    }
+  }
 }
