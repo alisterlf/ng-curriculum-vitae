@@ -24,7 +24,7 @@ export class ResumeComponent implements OnInit {
         this.title.setTitle(`${resume.basics.name} - Curriculum Vitae`);
         this.meta.addTag({
           name: 'description',
-          content: `${resume.basics.name} - Curriculum Vitae: ${resume.basics.summary}`
+          content: resume.basics.summary
         });
       })
     );
