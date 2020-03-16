@@ -6,7 +6,6 @@
     "build": "ng build --prod --verbose",
     "deploy": "ng deploy --repo=git@github.com:alisterlf/alisterlf.github.io.git --branch master",
     "e2e": "ng e2e",
-    "postinstall": "npm run prettier -s && ivy-ngcc",
     "lint": "ng lint",
     "ng": "ng",
     "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,json,scss}\"",
